@@ -3,10 +3,11 @@ const Bot = new Discord.Client();
 
 Bot.on('ready', () => {
     console.log(`[Startou] ${new Date()}`);
+    Bot.user.setGame('U.M.R Simulator!!')
 });
 
 Bot.on('message', message => {
-    if(message.content = 'ping') {
+    if(message.content === 'ping') {
     	message.channel.send('PINGOU')
     }
 });
