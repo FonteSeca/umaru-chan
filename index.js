@@ -3,7 +3,7 @@ const Bot = new Discord.Client();
 
 Bot.on('ready', () => {
     console.log(`[Startou] ${new Date()}`);
-    Bot.user.setGame('U.M.R Simulator!!')
+    Bot.user.setPresence({ game: { name: 'U.M.R Simulator!!', type: 0 } });
 });
 
 music(Bot);
@@ -48,6 +48,19 @@ function basicembed(color,text) {
     "url": image}
     }};
 }
+
+  function isAdmin(member) {
+    return member.hasPermission("ADMINISTRATOR");
+  }
+
+  function permission(msg, suffix) {
+    msg.delete();
+    if (isAdmin(msg.member)) {
+      msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
+    } else {
+      msg.channel.send(basicembed('5351170', 'Sem permissão'));
+    }
+  }
 
 
 Bot.login(process.env.token);
