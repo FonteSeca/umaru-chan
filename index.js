@@ -29,7 +29,7 @@ Bot.on('message', message => {
 
 	}
 
-}});
+});
 
 function basicembed(color,text) {
     return {embed: {
