@@ -5,7 +5,7 @@
 
   Bot.on('ready', () => {
       console.log(`[Start] ${new Date()}`);
-      Bot.user.setGame('O-onii-san... <3')
+      Bot.user.setPresence({ game: { name: 'U.M.R!', type: 0 } });
   });
 
   music(Bot);
@@ -24,8 +24,6 @@
 
       // Comando
      switch (command) {
-    case 'permission':
-      return test(msg, suffix);
     case 'say':
       return say(msg, suffix);
     default:
@@ -52,15 +50,6 @@
 
   function isAdmin(member) {
     return member.hasPermission("ADMINISTRATOR");
-  }
-
-  function permission(msg, suffix) {
-    msg.delete();
-    if (isAdmin(msg.member)) {
-      msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
-    } else {
-      msg.channel.send(basicembed('5351170', 'Sem permissão'));
-    }
   }
 
   function say(msg, suffix) {
