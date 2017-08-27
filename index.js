@@ -11,7 +11,6 @@ music(Bot);
 let PREFIX = '+';
 
 Bot.on('message', message => {
-    if(message.content === 'ping') {
 
     const message = msg.content.trim();
 
@@ -24,11 +23,10 @@ Bot.on('message', message => {
 		switch (command) {
 			case 'permission':
 			return permission(msg, suffix);
-		}
+    default:
+      msg.channel.send(basicembed('5351170', 'Comando errado ' + msg.author + ' b-baka...'));
+    }
 
-    	if(message.content == 'ping') {
-    		message.channel.send('PINGOU')
-    	}
 	}
 
 }});
